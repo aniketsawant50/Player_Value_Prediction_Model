@@ -1,79 +1,118 @@
-#⚽ Player Value Prediction
-📖 Overview
+# ⚽ Player Value Prediction using FIFA Dataset
 
-This project aims to predict the market value of football players using machine learning techniques. The model analyzes player attributes such as age, technical skills, and club information to estimate their value and identify key influencing factors.
+## 📖 Overview
+This project focuses on predicting the **market value of football players** using machine learning techniques. It analyzes player attributes such as physical characteristics, technical skills, and performance metrics to estimate their value.
 
-🎯 Objective
-Predict player market value (regression problem)
-Identify important features affecting player value
-Build and optimize a machine learning model
-📊 Dataset
+The project also evaluates:
+- Dimensionality Reduction (PCA)
+- Hyperparameter Tuning (GridSearchCV)
 
-The dataset contains player-level information, including:
+---
 
-Demographic details (age, country)
-Club information
-Technical attributes (reactions, ball control, composure, etc.)
-Market value (target variable)
-⚙️ Project Workflow
-1. Data Loading
-Imported dataset from CSV file
-Loaded data into a structured format for analysis
-2. Data Understanding
-Checked dataset shape, structure, and data types
-Reviewed summary statistics
-Identified numerical and categorical features
-3. Data Cleaning
-Removed unnecessary identifier column (player name)
-Cleaned the target variable by removing symbols
-Dropped columns with all missing values
-Verified and ensured no remaining null values
-Removed duplicate records
-4. Feature Classification
-Divided dataset into:
-Categorical features (country, club)
-Numerical features (age, technical stats)
-5. Data Transformation
-Converted categorical features into numerical form using encoding
-Prepared dataset for machine learning algorithms
-6. Outlier Handling
-Detected outliers using the IQR method
-Removed extreme values to improve model performance
-7. Exploratory Data Analysis (EDA)
-Univariate Analysis
-Analyzed distribution of features like age and reactions
-Bivariate Analysis
-Studied relationships between:
-Age and player value
-Reactions and player value
-Ball control and player value
-Correlation Analysis
-Identified strong and weak relationships between features
-8. Feature Scaling
-Standardized numerical features to bring them to the same scale
-9. Dimensionality Reduction (PCA)
-Applied PCA to reduce feature dimensions
-Retained important components capturing most variance
-10. Data Splitting
-Divided dataset into training and testing sets
-Used training data for model learning and testing data for evaluation
-11. Model Building
-Baseline Model
-Built initial model using Random Forest Regressor
-Optimized Model
-Improved model using hyperparameter tuning (GridSearchCV)
-12. Model Evaluation
-Evaluated model performance using:
-Mean Absolute Error (MAE)
-Mean Squared Error (MSE)
-Root Mean Squared Error (RMSE)
-R² Score
-13. Key Insights
-Player value peaks around mid-20s
-Higher reaction scores increase player value
-Technical attributes strongly influence value
-Some features contribute more significantly than others
-14. Conclusion
-Successfully built a machine learning model to predict player value
-Identified important factors affecting player valuation
-Provided insights useful for decision-making in sports analytics
+## 🎯 Objective
+- Predict player market value (regression problem)
+- Identify key factors influencing player value
+- Compare model performance:
+  - Baseline vs Tuned model
+  - PCA vs Non-PCA
+
+---
+
+## 📊 Dataset
+The dataset contains player-level information including:
+- Player details (country, club)
+- Physical attributes (age, height, weight)
+- Technical skills (ball control, reactions, passing, etc.)
+- Performance metrics
+- Market value (target variable)
+
+---
+
+## ⚙️ Project Workflow
+
+### 1. Data Loading
+- Loaded dataset from CSV file
+
+### 2. Data Understanding
+- Checked structure, data types, and summary statistics
+- Identified numerical and categorical features
+
+### 3. Data Cleaning
+- Removed identifier column (player)
+- Cleaned target variable (removed symbols)
+- Dropped columns with all null values
+- Removed duplicate records
+
+### 4. Feature Engineering
+- Encoded categorical variables (country, club)
+- Removed outliers using IQR method
+- Standardized features using scaling
+
+### 5. Exploratory Data Analysis (EDA)
+- Performed univariate analysis (feature distribution)
+- Performed bivariate analysis (feature vs value)
+- Generated correlation heatmap
+
+### 6. Dimensionality Reduction (PCA)
+- Applied PCA to reduce feature dimensions
+- Selected components explaining 95% variance
+
+### 7. Model Building
+
+#### Baseline Model
+- Random Forest Regressor
+
+#### Optimized Model
+- Random Forest with GridSearchCV
+
+### 8. Model Evaluation
+Models evaluated using:
+- Mean Absolute Error (MAE)
+- Mean Squared Error (MSE)
+- Root Mean Squared Error (RMSE)
+- R² Score
+
+---
+
+## 📈 Results
+- R² Score: ~0.62
+- RMSE: ~568,000
+- Tuned model performed better than baseline
+
+---
+
+## 🔍 Key Insights
+- Player value peaks in mid-20s
+- Technical skills (reactions, ball control, composure) strongly influence value
+- Some features (goalkeeper attributes) have lower impact
+- High-value players create skewed distribution
+
+---
+
+## 🚀 Future Improvements
+- Use advanced models (XGBoost, LightGBM)
+- Apply log transformation on target variable
+- Add more features (goals, assists, position)
+- Deploy model using Streamlit or Flask
+
+---
+
+## ▶️ How to Run
+
+```bash
+git clone https://github.com/your-username/player-value-prediction.git
+cd player-value-prediction
+pip install -r requirements.txt
+```
+
+Run the notebook to train and evaluate the model.
+
+---
+
+## 📌 Conclusion
+This project demonstrates a complete machine learning pipeline for predicting player value. It highlights the importance of feature engineering, dimensionality reduction, and hyperparameter tuning in improving model performance.
+
+---
+
+## 👨‍💻 Author
+Aniket Sawant
