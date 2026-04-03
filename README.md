@@ -75,7 +75,7 @@ Models evaluated using:
 ---
 
 ## 📈 Results
-- R² Score: ~0.62
+- R² Score: ~0.70
 - RMSE: ~568,000
 - Tuned model performed better than baseline
 
@@ -97,17 +97,6 @@ Models evaluated using:
 
 ---
 
-## ▶️ How to Run
-
-```bash
-git clone https://github.com/your-username/player-value-prediction.git
-cd player-value-prediction
-pip install -r requirements.txt
-```
-
-Run the notebook to train and evaluate the model.
-
----
 
 ## 📌 Conclusion
 This project demonstrates a complete machine learning pipeline for predicting player value. It highlights the importance of feature engineering, dimensionality reduction, and hyperparameter tuning in improving model performance.
