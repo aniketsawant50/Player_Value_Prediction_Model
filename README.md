@@ -1,47 +1,73 @@
-# ⚽ Player Value Prediction using Machine Learning
-It is the player value prediction model build with the Gridsearchcv
+# ⚽ Player Value Prediction
+📖 Overview
 
-📌 Project Overview
+This project focuses on predicting the market value of football players using machine learning techniques. By analyzing player attributes such as age, technical skills, and club information, the model estimates a player’s value and identifies key factors influencing it.
 
-This project aims to predict the market value of football players using machine learning techniques. It uses player statistics such as age, reactions, ball control, and other attributes to estimate their value.
-
-The project follows a complete ML pipeline including:
-
-Data Cleaning
-Exploratory Data Analysis (EDA)
-Feature Engineering
-Dimensionality Reduction (PCA)
-Model Building (Random Forest)
-Hyperparameter Tuning (GridSearchCV)
 🎯 Objective
-Predict player market value (Regression Problem)
-Identify key features affecting player value
-Improve prediction accuracy using tuning techniques
-📂 Dataset
-File: player_stats.csv
-Contains player attributes such as:
-Age
-Country
-Club
-Technical skills (reactions, ball control, etc.)
+Predict player market value (regression task)
+Understand the impact of player attributes on valuation
+Build an optimized machine learning model using tuning techniques
+📊 Dataset
+
+The dataset contains player-level information including:
+
+Age and demographics
+Club and country
+Technical attributes (reactions, ball control, composure, etc.)
 Market value (target variable)
-🧪 Technologies Used
-Python
-Pandas, NumPy
-Matplotlib, Seaborn
-Scikit-learn
-🔍 Project Workflow
-1. Data Preprocessing
-Removed unnecessary columns (player)
-Cleaned target column (value)
-Removed null columns (marking)
+⚙️ Methodology
+Data Preprocessing
+Removed unnecessary identifier column (player)
+Cleaned the value column (removed symbols and formatting)
+Dropped columns with all missing values (e.g., marking)
 Removed duplicate records
-Label Encoding for categorical variables (country, club)
-2. Exploratory Data Analysis (EDA)
-Univariate Analysis:
-Age distribution
-Reactions distribution
-Bivariate Analysis:
+Encoded categorical features (country, club) using Label Encoding
+Exploratory Data Analysis
+Distribution analysis of features such as age and reactions
+Relationship analysis between:
+Age and player value
+Reactions and player value
+Ball control and player value
+Correlation heatmap to identify important features
+Feature Engineering
+Outlier removal using the IQR method
+Feature scaling using StandardScaler
+Dimensionality reduction using PCA (25 components)
+Model Development
+Baseline Model: RandomForestRegressor
+Optimized Model: RandomForestRegressor with GridSearchCV
+
+Hyperparameters tuned:
+
+Number of estimators
+Maximum depth
+Minimum samples split
+📈 Model Performance
+Metric	Value
+MAE	385,495
+MSE	323,230,920,490
+RMSE	568,534
+R² Score	0.62
+🔍 Key Insights
+Player value peaks in the mid-20s age range
+Higher reaction scores strongly increase player value
+Technical skills such as ball control and composure are major contributors
+Goalkeeper-specific attributes have lower impact on overall valuation
+🚀 Future Improvements
+Use advanced models like XGBoost or LightGBM
+Apply log transformation on the target variable
+Include additional features such as player position and performance stats
+Deploy the model using Streamlit or Flask
+▶️ How to Run
+git clone https://github.com/your-username/player-value-prediction.git
+cd player-value-prediction
+pip install -r requirements.txt
+
+Run the notebook or script to train the model.
+
+📌 Conclusion
+
+This project demonstrates a complete machine learning pipeline for predicting player value. The model achieves a reasonable performance and provides meaningful insights that can support decision-making in player scouting and transfers.
 Age vs Value
 Reactions vs Value
 Ball Control vs Value
